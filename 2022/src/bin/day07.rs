@@ -73,7 +73,7 @@ impl<'fs> FsNode<'fs> {
 // Use type alias instead of a new type for simplicity.
 type DirStack<'fs> = Vec<Rc<RefCell<FsNode<'fs>>>>;
 
-/// Returs a reference to the top node of the stack. Panics if the stack is empty.
+/// Returns a reference to the top node of the stack. Panics if the stack is empty.
 fn top<'a, 'fs>(stack: &'a DirStack<'fs>) -> Ref<'a, FsNode<'fs>> {
     stack.last().expect("unexpected empty stack").borrow()
 }
